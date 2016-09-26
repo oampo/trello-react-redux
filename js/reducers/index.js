@@ -1,21 +1,36 @@
 import * as actions from '../actions/index';
 
 const initialState = {
-    lists: []
+    lists: [{
+        id: 0,
+        title: 'First list',
+        cards: [{
+            id: 0,
+            text: 'Example card'
+        }, {
+            id: 1,
+            text: 'Another card'
+        }]
+    }, {
+        id: 1,
+        title: 'Second list',
+        cards: [{
+            id: 0,
+            text: 'Example card'
+        }, {
+            id: 1,
+            text: 'Another card'
+        }]
+    }]
 };
 
 export default function reducer(state=initialState, action) {
-    if (action.type === actions.FETCH_LISTS_SUCCESS) {
-        return Object.assign({}, state, {
-            lists: action.lists
-        });
-    }
-    else if (action.type === actions.ADD_LIST_SUCCESS) {
+    if (action.type === actions.ADD_LIST) {
         return Object.assign({}, state, {
             lists: state.lists.concat(action.list)
         });
     }
-    else if (action.type === actions.ADD_CARD_SUCCESS) {
+    else if (action.type === actions.ADD_CARD) {
         let lists = state.lists.map((list) => {
             if (list.id !== action.card.listId) {
                 return list;

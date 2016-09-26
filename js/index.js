@@ -4,13 +4,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
-import ReduxThunk from 'redux-thunk';
 
 import reducer from './reducers';
 import Board from './components/board';
 
 
-let store = createStore(reducer, applyMiddleware(ReduxThunk));
+let store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>

@@ -11,10 +11,6 @@ export class Board extends React.Component {
         this.addList = this.addList.bind(this);
     }
 
-    componentDidMount() {
-        this.props.dispatch(actions.fetchLists());
-    }
-
     addList(title) {
         this.props.dispatch(
             actions.addList({
