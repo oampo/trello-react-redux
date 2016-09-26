@@ -1,9 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import * as actions from '../actions/index';
-
-export class AddForm extends React.Component {
+export default class AddForm extends React.Component {
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
@@ -30,5 +27,3 @@ export class AddForm extends React.Component {
         );
     }
 };
-
-export default connect()(AddForm);
