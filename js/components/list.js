@@ -1,35 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import * as actions from '../actions/index';
 import Card from './card';
 import AddForm from './add-form';
 
-export class List extends React.Component {
-    constructor(props) {
-        super(props);
-        this.addCard = this.addCard.bind(this)
-    }
-
-    addCard(text) {
-        this.props.dispatch(
-            actions.addCard({
-                text,
-                listId: this.props.id
-            })
-        );
-    }
-
-    render() {
-        const cards = this.props.cards.map((card, index) => <Card key={index} {...card} />);
-        return (
-            <div className="list">
-                <h3>{this.props.title}</h3>
-                {cards}
-                <AddForm onAdd={this.addCard} />
-            </div>
-        );
-    }
+export default function List(props) {
+    const cards = props.cards.map((card, index) => <Card key={index} {...card} />);
+    return (
+        <div className="list">
+            <h3>{props.title}</h3>
+            {cards}
+            <AddForm />
+        </div>
+    );
 };
 
 List.defaultProps = {
@@ -37,4 +19,3 @@ List.defaultProps = {
     cards: []
 };
 
-export default connect()(List);
