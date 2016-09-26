@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+}
+
+.lists {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.list {
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.list:last-child {
+    margin-right: 0;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+

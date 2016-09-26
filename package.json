@@ -6,7 +6,7 @@
   "scripts": {
     "start": "http-server build",
     "dev": "run-p watch serve api",
-    "test": "mocha --recursive",
+    "test": "mocha --recursive --compilers js:babel-core/register",
     "build": "run-s build:*",
     "clean": "rm -rf build",
     "serve": "npm start",
@@ -45,13 +45,17 @@
     "http-server": "^0.9.0",
     "mocha": "^3.0.1",
     "npm-run-all": "^3.0.0",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "json-server": "^0.8.20",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
   }
 }

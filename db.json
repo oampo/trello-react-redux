@@ -1,1 +1,24 @@
-{}
+{
+  "lists": [
+    {
+      "title": "Example List",
+      "id": 1
+    },
+    {
+      "title": "Another example list",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "text": "Example card",
+      "listId": 1,
+      "id": 1
+    },
+    {
+      "text": "Example card",
+      "listId": 2,
+      "id": 2
+    }
+  ]
+}
